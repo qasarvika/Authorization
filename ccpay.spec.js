@@ -1,13 +1,6 @@
 /// <reference types="Cypress" />
-
 describe('CC Pay Verification', () => 
-{
-        Cypress.on('uncaught:exception', (err, runnable) => 
-        {
-            // returning false here prevents Cypress from 
-            // failing the test
-            return false
-            
+{                   
         })
         function repeat(){
                 cy.get('#welcome-data').click().wait(300)
@@ -27,22 +20,15 @@ describe('CC Pay Verification', () =>
                 .get('#paymentGateway > :nth-child(5) > label').click().wait(900)
                 .get('#continueButton').click()
                 .get('u > a').click().wait(3000)
-cy.window().then((win)=>{
-    
-})
-            }
-     
+             }  
    
-   it('CCPAY_Auth_IPN_DNU', function() 
-            
+   it('CCPAY_Auth_IPN_DNU', function()             
     {
         cy.visit('https://www.mypromomall.com/preview/store.html?vid=20201202450')
         repeat()
         cy.get('#name').type('test')
-    })
-  
-     it('CCPAY_Auth_DNU', function() 
-  
+    })  
+     it('CCPAY_Auth_DNU', function()   
     {
         cy.visit('https://www.mypromomall.com/preview/store.html?vid=20201202449')
         repeat()
@@ -54,9 +40,7 @@ cy.window().then((win)=>{
             .url().should('contain', 'revieworder.html')
             .get('#placeord').click().wait(300)
             .url().should('contain', 'ordercompleted.html')
-
     }) 
-
    /*  it('CCPAY_QA_CENPOS_DNU', function() 
   
     {
@@ -65,5 +49,3 @@ cy.window().then((win)=>{
         cy.get('#name').type('test')
         
     }) */
-})
-
